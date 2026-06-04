@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon"
+        href="https://imgs.search.brave.com/Dy6uYuwzLeg4uZHVJpuJjioYwOmafjNFS3he1kID2is/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9nZW9t/ZXRyeS1nYW1lLm9y/Zy9jYWNoZS9kYXRh/L2ltYWdlL2Rhc2gt/Z2FtZXMtbTI0eDI0/LmpwZw">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario do Radi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            background-color: #49e592;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        fieldset {
+            border: 1px solid black;
+            background-color: rgb(197, 255, 149);
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        textarea {
+            margin: 15px 0;
+            background-color: rgb(233, 255, 223);
+            width: 100%;
+            resize: none;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        input[type=date],
+        select {
+            margin: 15px 0;
+            background-color: rgb(237, 255, 225);
+            transition: background-color 0.5s ease;
+            width: 100%;
+            max-width: 250px;
+            padding: 5px;
+        }
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus {
+            background-color: lightblue;
+        }
+
+        input:hover,
+        textarea:hover {
+            background-color: rgb(190, 255, 190);
+            transition: background-color 0.2s ease;
+        }
+
+        textarea:hover {
+            resize: vertical;
+        }
+
+        button {
+            margin: 15px 0;
+            background-color: rgb(124, 245, 64);
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulário de Cadastro Universitário</h1>
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required placeholder="Digite seu email"><br>
+
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha" required pattern="[0-9]{5}"
+                    placeholder="Digite sua senha"><br>
+
+                <label for="curso">Curso:</label><br>
+                <select id="curso" name="curso" required>
+                    <option value="" disabled selected>Selecione seu curso</option>
+                    <option value="analise">Análise de Sistemas</option>
+                    <option value="cc">Ciência da Computação</option>
+                    <option value="es">Engenharia de Software</option>
+                </select><br><br>
+
+                <label for="nascimento">Data de Nascimento:</label><br>
+                <input type="date" id="nascimento" name="nascimento" required><br><br>
+
+                <label>Sexo:</label><br>
+                <input type="radio" id="masculino" name="sexo" value="masculino" required>
+                <label for="masculino">Masculino</label>
+
+                <input type="radio" id="feminino" name="sexo" value="feminino" required>
+                <label for="feminino">Feminino</label>
+
+                <input type="radio" id="outro" name="sexo" value="outro" required>
+                <label for="outro">Outro</label><br><br>
+
+                <label for="interesses">Interesses:</label><br>
+                <textarea id="interesses" name="interesses" placeholder="Descreva seus interesses"></textarea><br>
+
+                <label for="comentarios">Comentários:</label><br>
+                <textarea id="comentarios" name="comentarios" placeholder="Deixe seus comentários"></textarea><br>
+
+                <label for="foto">Foto de Perfil:</label><br>
+                <input type="file" id="foto" name="foto" accept="image/*"><br><br>
+
+                <button type="submit">Cadastrar</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
